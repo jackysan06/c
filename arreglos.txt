@@ -1,0 +1,209 @@
+Htinclude <stdio.h>
+int arre[6];
+int cant=6;
+
+int i,x,y,op,opc,opcion,maximo,modi,mod, valor;
+
+//AGREGAR UN ELEMENTO
+void insertar(const int arre[],maximo, valor)
+iflarre[0]==0)1[ //si el arreglo esta vacio i=0 agregar elementos ¡++
+for (i=0; i<6; i++)f
+printf("Ingrese el valor entero en %d: ",i);
+scanf("%d",g.arreli]);
+)
+
+Jelse if(arre[0]!=0)(//si el arreglo tiene elemntos, Agrgar elementos y verificar si hay espacio
+disponibles
+
+for (i=0; i<6; i++)f
+if(arre[i]==0X
+valor=valor+0;
+Jelsef
+valor=valor+1;
+)
+)
+printf("inva %d: ",¡);
+if(valor==6Kf
+printi('n ¡¡Arreglo lleno!! inNo podemos insertar nuevos elementosAn");
+Jelsef
+for (i=0; ¡<6; ¡++)f
+if(arre[i]==0K
+printi('n Hay espacio en %d ",i);
+
+printi(n Ingrese el valor entero en %d: ",i);
+scant("%d",£arre[i]);
+J
+J
+
+printf(inAhora el arreglo tiene los valores: ");
+
+for (i=0; ¡<6; i++)(
+printi("n %d ",arre[i]);
+)
+)
+
+//ORDENAR
+void ordenar(opc)[
+printf('in1. Ascendente.");
+printf('in2. Descendente.");
+printf('n¿De que manera desea ordenar?");scanf("%d",8:0pc);
+switch(opc)(í
+case 1:
+for (i=0; ¡i<6-1; ¡++)f
+for (y=0; y<6-1; y++)(
+iflarre[y]>arre[y+1]X
+maximo=arre[y];
+arre[y]=arre[y+1];
+arre[y+1]=maximo;
+)
+)
+)
+
+for (i=0; ¡<6; ¡++)f
+printf(An %d ",arre[i]);
+)
+break;
+case 2:
+for (i=0; ¡i<6-1; ¡++)f
+for (y=0; y<6-1; y++)(
+iflarre[y]<arre[y+1]X
+maximo=arre[y];
+arre|y]=arre[y+1];
+arre[y+1]=maximo;
+)
+)
+)
+for (i=0; ¡<6; ¡++)f
+printf(An %d ",arre[i]);
+)
+break;
+defalul:
+printi('in Valor no valido An");
+)
+
+)
+//BUSQUEDA DE UN ELEMENTO
+
+int buscarEnArreglo(const int arre[], int busq, int longi) [
+for (int x= 0; x< longi; x++) [
+if (arre[x] == busq) return x;
+)
+
+return -1;
+
+ 
+
+1/
+int main(void) [
+
+int busg; int existe;
+int longi= sizeof arre;
+maximo=0;
+dof
+
+printf('An--- MENU DE OPCIONES--An");
+printi(n 1. Agregar un elemento.");
+printi('n 2. Quitar uno o todos los elementos.");
+printi(n 3. Modificar por elemento nuevo.");
+printi(n 4. Buscar un elemento.");
+printi(n 5. Ordenar de forma ascendente/descendente.");
+printi(n 6. Salir.');
+printi('n ¿Que accion desea realizar? ");
+scant("%d",20p);
+
+switch(op)K
+
+case 1: //AGREGAR ELEMENTO
+
+insertar(arre,valor,maximo);break;
+
+case 2: //QUITAR UNO o TODOS ELEMENTO
+printi(n 1. Eliminar un elemento.");
+printi(n 2. Eliminar todos los elementos");
+printi('in ¿Que accion desea realizar?");scanf("%d",2:opcion);
+switch(opcion)[
+case 1:
+printf(" ¿Posición del elemento que desea eliminar?");scanf("%d",8.opc);
+for(y=0;y<6;y++)1
+
+ifly==0pc)1
+while(y<cant-11[
+arre[yl=arre[y+1];
+y+;
+)
+break;
+)
+)
+arre[5]=0;
+printf('in Los elementos del arreglo son:");
+for (i=0; ¡<6; i++)
+printf('n %d ",arre[i]);
+)
+break;
+case 2:
+for (i=0; ¡<6; i++)
+if(arre[i]!=0)(
+arre[i]=0;
+)
+)
+
+printf(n Accion completada con exito!!Án Arreglo vacio An");
+for (i=0; ¡<6; i++)
+printi('in %d ",arre[i]);
+)
+break;
+)
+break;
+case 3: //MODIFICAR POR ELEMENTO NUEVO
+
+iflarre[0]==0)(
+printi(n ¡¡No se puede modificar arreglo porque esta vacio! An");
+Jelseí
+printf("¿Cual es la posición del elemento que desea modificar?");
+scanf("%d",8. modi);
+for (i=0; ¡<6; i++)
+if(i == modi)X
+printi('in ¿Cual es el valor nuevo que desea agregar?");
+scant("%d",8mod);
+arre[i]=mod;
+)
+)
+
+printi('n Los valores son:");
+for (i=0; ¡<6; i++)
+
+printf('n %d ",arre[i]);
+
+break;
+
+case 4: //BUSCAR VALOR
+if(arre[0]==0X
+printi(n ¡¡No se puede buscar valor porque esta vacio! in");
+Jelseí
+printi('n ¿Cual es el valor que desea buscar?");scanf("%d",8:busq);
+existe = buscarEnArreglo(arre, busq, longi);
+if(existe==-1)f
+printi('in El valor no se encuentra en el arreglo An");
+Jelseí
+
+printi('in La posición de %d en el arreglo es: %d An", busq, existe);
+break;
+
+case 5: //ORDENAR DE FORMA ASCENDENTE o DESCENDENTE
+
+iflarre[0]==01f
+printi('in ¡¡No se puede ordenar valores porque esta vacio!ln");
+Jelseí
+ordenar(opc);
+)
+break;
+case 6:
+printf("Bai :) ");
+break;
+default:
+printi(n ¡¡Numero no valido! Án Ingrese un valor valido An");
+
+break;
+
+jmhile(op!=6);
+
